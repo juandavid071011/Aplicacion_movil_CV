@@ -1,8 +1,11 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import MiBoton from "../components/MiBoton";
 
 const Inicio = () => {
+  const router = useRouter();
+
   return (
     <ScrollView style={estilos.contenedor} contentContainerStyle={estilos.contenido}>
       <View style={estilos.avatarContenedor}>
@@ -22,11 +25,53 @@ const Inicio = () => {
 
       <View style={estilos.seccion}>
         <Text style={estilos.subtitulo}>Contacto</Text>
+
         <MiBoton
           textoBoton="Enviar Correo"
           nombreIcono="mail"
           colorBoton="#E8D464"
-          onPress={() => Alert.alert("Contacto", "Correo: juan.david071011@gamil.com")}
+          onPress={() => Alert.alert("Correo", "juan.david071011@gmail.com")}
+        />
+        <MiBoton
+          textoBoton="Llamar"
+          nombreIcono="call"
+          colorBoton="#5B7FE8"
+          onPress={() => Alert.alert("Teléfono", "+57 3204467573")}
+        />
+        <MiBoton
+          textoBoton="Ver Perfil LinkedIn"
+          nombreIcono="logo-linkedin"
+          colorBoton="#0A66C2"
+          onPress={() => Alert.alert("LinkedIn", "linkedin.com/in/tu-usuario")}
+        />
+        <MiBoton
+          textoBoton="Facebook"
+          nombreIcono="logo-facebook"
+          colorBoton="#1877F2"
+          onPress={() => Alert.alert("Facebook", "facebook.com/juan david")}
+        />
+        <MiBoton
+          textoBoton="Instagram"
+          nombreIcono="logo-instagram"
+          colorBoton="#E1306C"
+          onPress={() => Alert.alert("Instagram", "@juxn_dxvid_10")}
+        />
+        <MiBoton
+          textoBoton="Repositorio GitHub"
+          nombreIcono="logo-github"
+          colorBoton="#24292e"
+          onPress={() =>
+            Alert.alert(
+              "Repositorio",
+              "https://github.com/juandavid071011/Aplicacion_movil_CV"
+            )
+          }
+        />
+        <MiBoton
+          textoBoton="Estudios"
+          nombreIcono="school"
+          colorBoton="#F07167"
+          onPress={() => router.push("/estudios")}
         />
       </View>
     </ScrollView>
